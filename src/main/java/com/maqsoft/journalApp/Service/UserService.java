@@ -6,9 +6,12 @@ import com.maqsoft.journalApp.repository.JournalEntryRepo;
 import com.maqsoft.journalApp.repository.UserRepo;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PutMapping;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,11 +21,15 @@ public class UserService {
     @Autowired
     private UserRepo UserRepo;
 
-//    public void SaveEntry(JournalEntry JournalEntry){
-//        JournalEntryRepo.save(JournalEntry);
-//    }
+    private static final PasswordEncoder passwordencoder = new BCryptPasswordEncoder();
 
     public void saveentry(User myuser){
+        UserRepo.save(myuser);
+    }
+
+    public void savenewuser(User myuser){
+        myuser.setPassWord(passwordencoder.encode(myuser.getPassWord()));
+        myuser.setRoles(Arrays.asList("user"));
         UserRepo.save(myuser);
     }
 
