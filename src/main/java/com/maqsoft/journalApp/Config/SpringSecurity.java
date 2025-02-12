@@ -29,7 +29,7 @@ public class SpringSecurity {
         http
                 .authorizeHttpRequests(auth -> auth
                         // Secures any endpoints under /journal/**
-                        .requestMatchers("/journal/**","/user/**").authenticated()
+                        .requestMatchers("/_journal/**","/user/**").authenticated()
                         // All other endpoints are permitted without authentication
                         .anyRequest().permitAll()
                 )
