@@ -28,31 +28,21 @@ public class SpringSecurity {
 
         http
                 .authorizeHttpRequests(auth -> auth
-                        // Secures any endpoints under /journal/**
+                        // Secures any endpoints under /journal/** , /user/** , /admin/**
                         .requestMatchers("/_journal/**","/user/**").authenticated()
+                        .requestMatchers("/admin/**").hasRole("admin")
                         // All other endpoints are permitted without authentication
                         .anyRequest().permitAll()
                 )
                 // Enables HTTP Basic Authentication
                 .httpBasic(Customizer.withDefaults());
-        //http.csrf(csrf -> csrf.disable());
-        //http.sessionManagement().sessionCreationPolicy(sessionCreationPolicy.STATELESS).and().csrf().disable();
-        http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // ✅ Correct way
+        http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .csrf(csrf -> csrf.disable());
 
         return http.build();
     }
 
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.userDetailsService(userdetailsService).passwordEncoder(passwordEncoder());
-//    }
-//
-//
-//    @Bean
-//    public PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder();
-//    }
+
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
@@ -67,8 +57,6 @@ public class SpringSecurity {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
-
-
 
 
     @Bean

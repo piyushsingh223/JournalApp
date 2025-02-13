@@ -13,6 +13,12 @@ public class PublicController {
     private UserService myuserService;
 
 
+    @GetMapping("helath-check")
+    public String heath_check(){
+        return "okay";
+    }
+
+
     @PostMapping("/create-user")
     public void createUser(@RequestBody User user){
         //System.out.println(user);
