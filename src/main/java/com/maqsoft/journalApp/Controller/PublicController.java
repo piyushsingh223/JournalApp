@@ -13,8 +13,8 @@ public class PublicController {
     private UserService myuserService;
 
 
-    @GetMapping("helath-check")
-    public String heath_check(){
+    @GetMapping("health-check")
+    public String health_check(){
         return "okay";
     }
 
