@@ -4,6 +4,7 @@ import com.maqsoft.journalApp.Entity.JournalEntry;
 import com.maqsoft.journalApp.Entity.User;
 import com.maqsoft.journalApp.repository.JournalEntryRepo;
 import org.bson.types.ObjectId;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 @Component
 public class JournalEntryService {
@@ -23,6 +25,7 @@ public class JournalEntryService {
 
     @Autowired
     private UserService myuserservice;
+
 
 //    public void SaveEntry(JournalEntry JournalEntry){
 //        JournalEntryRepo.save(JournalEntry);

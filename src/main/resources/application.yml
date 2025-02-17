@@ -1,3 +1,11 @@
 spring:
   profiles:
     active: dev
+
+
+logging:
+  level:
+    com:
+      maqsoft:
+        journalApp: INFO          #all the logs having severity greater than debug will also be printed along with debug .
+                                    #Severity level:- error > warn > info > debug > trace
