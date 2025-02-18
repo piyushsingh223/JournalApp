@@ -1,0 +1,3 @@
+25-02-17 17:19:07.257 [http-nio-8080-exec-3] ERROR c.m.journalApp.Service.UserService - error occured 
+25-02-17 17:19:07.258 [http-nio-8080-exec-3] INFO  c.m.journalApp.Service.UserService - info occured 
+25-02-17 17:19:07.259 [http-nio-8080-exec-3] WARN  c.m.journalApp.Service.UserService - warning accured 
