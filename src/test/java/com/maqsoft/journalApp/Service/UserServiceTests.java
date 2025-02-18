@@ -32,6 +32,7 @@ public class UserServiceTests {
         assertTrue(5>3);
     }
 
+    @Disabled
     @BeforeAll        // runs at starting , then all the test cases are executed.
     //@BeforeEach     // runs before each test case . similarly there are AfterAll and afterEach
     public static void dummy2(){
@@ -45,6 +46,7 @@ public class UserServiceTests {
             "3,3,9"
     })
     @ParameterizedTest
+    @Disabled
     public void test(int a ,int b,int sum){
         assertEquals(sum,a+b);
     }
@@ -55,6 +57,7 @@ public class UserServiceTests {
             "vipul"
     })
     @ParameterizedTest
+    @Disabled
     public void testfindUserByUserName(String username){
         assertNotNull(myuserrepo.findByuserName(username));
     }

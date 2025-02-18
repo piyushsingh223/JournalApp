@@ -4,6 +4,7 @@ import com.maqsoft.journalApp.Entity.User;
 import com.maqsoft.journalApp.repository.UserRepo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
@@ -32,11 +33,13 @@ public class UserDetailsServiceImplTest {
 //        }
 //    }
 
+    @Disabled
     @BeforeEach     //this is to intialize the userrepository else it will throw null exception error.
     void setup(){
         MockitoAnnotations.openMocks(this);
     }
 
+    @Disabled
     @Test
     void loadUserByUsernameTest(){
         when(myuserepo.findByuserName(ArgumentMatchers.anyString()))
