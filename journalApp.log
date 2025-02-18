@@ -1,2 +1,2 @@
-25-02-18 16:18:11.657 [main] INFO  c.m.journalApp.JournalAppApplication - Starting JournalAppApplication using Java 23.0.1 with PID 19628 (C:\java springboot\journalApp\target\classes started by PiyushKumarSinghMAQS in C:\java springboot\journalApp) 
-25-02-18 16:18:11.672 [main] INFO  c.m.journalApp.JournalAppApplication - The following 1 profile is active: "dev" 
+25-02-18 16:20:04.295 [main] INFO  c.m.journalApp.JournalAppApplication - Starting JournalAppApplication using Java 23.0.1 with PID 15860 (C:\java springboot\journalApp\target\classes started by PiyushKumarSinghMAQS in C:\java springboot\journalApp) 
+25-02-18 16:20:04.306 [main] INFO  c.m.journalApp.JournalAppApplication - The following 1 profile is active: "dev" 
