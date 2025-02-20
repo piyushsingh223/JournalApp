@@ -51,6 +51,7 @@ public class UserServiceTests {
     @ValueSource(strings = {
             "piyush",
             "Deepak",
+            "paul"
     })
     @ParameterizedTest
     public void testfindUserByUserName(String username){
