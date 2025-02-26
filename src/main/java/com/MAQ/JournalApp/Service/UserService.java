@@ -12,13 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-@Component
+@Service
 @Slf4j
 public class UserService {
 
@@ -43,10 +44,10 @@ public class UserService {
             //log.error("error occured for {}",myuser.getUserName(),e);
 //            log.error("error occured");
 //            log.info("info occured");
-              logger.warn("warning accured");
+              logger.warn("This user already exists");
 //            log.debug("debug occured");
 //            log.trace("trace occured");
-              logger.error("new error");
+              logger.error("cannot create dublicate user , please create new credentials");
             return false;
         }
     }

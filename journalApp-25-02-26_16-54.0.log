@@ -1,0 +1,4 @@
+25-02-26 16:54:55.621 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete 
+25-02-26 16:54:55.638 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete 
+25-02-26 16:54:59.819 [main] INFO  c.M.JournalApp.JournalAppApplication - Starting JournalAppApplication using Java 23.0.1 with PID 10300 (C:\reimbursement\JournalApp\target\classes started by PiyushKumarSinghMAQS in C:\reimbursement\JournalApp) 
+25-02-26 16:54:59.822 [main] INFO  c.M.JournalApp.JournalAppApplication - The following 1 profile is active: "dev" 

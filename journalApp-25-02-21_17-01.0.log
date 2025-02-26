@@ -1,0 +1,49 @@
+25-02-21 17:01:04.279 [cluster-ClusterId{value='67b841c130167171662833f3', description='Cluster01'}-cluster01-shard-00-02.ol38q.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server cluster01-shard-00-02.ol38q.mongodb.net:27017 
+com.mongodb.MongoSocketException: cluster01-shard-00-02.ol38q.mongodb.net
+	at com.mongodb.internal.connection.ServerAddressHelper.getSocketAddresses(ServerAddressHelper.java:75)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:100)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:79)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:233)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:219)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:176)
+Caused by: java.net.UnknownHostException: cluster01-shard-00-02.ol38q.mongodb.net
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:998)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1807)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1676)
+	at com.mongodb.internal.connection.DefaultInetAddressResolver.lookupByName(DefaultInetAddressResolver.java:34)
+	at com.mongodb.internal.connection.ServerAddressHelper.getSocketAddresses(ServerAddressHelper.java:71)
+	... 5 common frames omitted
+25-02-21 17:01:14.153 [cluster-ClusterId{value='67b841c130167171662833f3', description='Cluster01'}-cluster01-shard-00-00.ol38q.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster01-shard-00-00.ol38q.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=62971700, minRoundTripTimeNanos=0, setName='atlas-i0xexw-shard-0', canonicalAddress=cluster01-shard-00-00.ol38q.mongodb.net:27017, hosts=[cluster01-shard-00-00.ol38q.mongodb.net:27017, cluster01-shard-00-01.ol38q.mongodb.net:27017, cluster01-shard-00-02.ol38q.mongodb.net:27017], passives=[], arbiters=[], primary='cluster01-shard-00-02.ol38q.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az1'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=232, topologyVersion=TopologyVersion{processId=67aecd5998febb6e50b7009d, counter=5}, lastWriteDate=Fri Feb 21 17:01:14 IST 2025, lastUpdateTimeNanos=24491199029300} 
+25-02-21 17:01:14.272 [cluster-ClusterId{value='67b841c130167171662833f3', description='Cluster01'}-cluster01-shard-00-01.ol38q.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server cluster01-shard-00-01.ol38q.mongodb.net:27017 
+com.mongodb.MongoSocketWriteException: Exception sending message
+	at com.mongodb.internal.connection.InternalStreamConnection.throwTranslatedWriteException(InternalStreamConnection.java:790)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:675)
+	at com.mongodb.internal.connection.InternalStreamConnection.trySendMessage(InternalStreamConnection.java:507)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendCommandMessage(InternalStreamConnection.java:482)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceiveInternal(InternalStreamConnection.java:440)
+	at com.mongodb.internal.connection.InternalStreamConnection.lambda$sendAndReceive$0(InternalStreamConnection.java:375)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:378)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:100)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:49)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:144)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:79)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:235)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:219)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:176)
+Caused by: javax.net.ssl.SSLException: (internal_error) Received fatal alert: internal_error
+	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:132)
+	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:117)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:370)
+	at java.base/sun.security.ssl.Alert$AlertConsumer.consume(Alert.java:287)
+	at java.base/sun.security.ssl.TransportContext.dispatch(TransportContext.java:209)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:172)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1507)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1422)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:455)
+	at java.base/sun.security.ssl.SSLSocketImpl.ensureNegotiated(SSLSocketImpl.java:924)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppOutputStream.write(SSLSocketImpl.java:1293)
+	at com.mongodb.internal.connection.SocketStream.write(SocketStream.java:165)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:672)
+	... 12 common frames omitted
+25-02-21 17:01:14.598 [cluster-ClusterId{value='67b841c130167171662833f3', description='Cluster01'}-cluster01-shard-00-02.ol38q.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=cluster01-shard-00-02.ol38q.mongodb.net:27017, type=REPLICA_SET_PRIMARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=138550400, minRoundTripTimeNanos=0, setName='atlas-i0xexw-shard-0', canonicalAddress=cluster01-shard-00-02.ol38q.mongodb.net:27017, hosts=[cluster01-shard-00-00.ol38q.mongodb.net:27017, cluster01-shard-00-01.ol38q.mongodb.net:27017, cluster01-shard-00-02.ol38q.mongodb.net:27017], passives=[], arbiters=[], primary='cluster01-shard-00-02.ol38q.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az2'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff00000000000000bb, setVersion=232, topologyVersion=TopologyVersion{processId=67aecc84d3051785564429e0, counter=9}, lastWriteDate=Fri Feb 21 17:01:14 IST 2025, lastUpdateTimeNanos=24491644901200} 
+25-02-21 17:01:14.599 [cluster-ClusterId{value='67b841c130167171662833f3', description='Cluster01'}-cluster01-shard-00-02.ol38q.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary cluster01-shard-00-02.ol38q.mongodb.net:27017 with max election id 7fffffff00000000000000bb and max set version 232 

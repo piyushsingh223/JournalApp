@@ -4,6 +4,8 @@ import com.MAQ.JournalApp.Entity.JournalEntry;
 import com.MAQ.JournalApp.Entity.User;
 import com.MAQ.JournalApp.Service.JournalEntryService;
 import com.MAQ.JournalApp.Service.UserService;
+import com.MAQ.JournalApp.Service.WeatherService;
+import com.MAQ.JournalApp.api.response.WeatherResponse;
 import com.MAQ.JournalApp.repository.UserRepo;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,9 @@ public class UserController {
 
     @Autowired
     private UserRepo userrepo;
+
+    @Autowired
+    private WeatherService weatherService;
 
 
 //    @GetMapping
@@ -52,6 +57,17 @@ public class UserController {
         String userName=authentication.getName();
         userrepo.deleteByuserName(userName);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("greet")
+    public  ResponseEntity<?> greeting(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        WeatherResponse weatherResponse = weatherService.getWeather("Noida");
+        String greeting = "";
+        if(weatherResponse!=null){
+            greeting=" , Weather feels like "+weatherResponse.getCurrent().getFeelslike();
+        }
+        return new ResponseEntity<>("Hii "+authentication.getName()+ greeting,HttpStatus.OK);
     }
 }
 
