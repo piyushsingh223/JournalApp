@@ -23,6 +23,7 @@ public class JournalEntry {
     @NonNull
     private String title;
     private String content;
+    private LocalDateTime date;
 
     public ObjectId getId() {
         return id;
@@ -56,5 +57,4 @@ public class JournalEntry {
         this.date = date;
     }
 
-    private LocalDateTime date;
 }
